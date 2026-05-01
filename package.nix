@@ -8,16 +8,16 @@
 }:
 buildGoModule (finalAttrs: {
   pname = "Koito";
-  version = "0.1.7";
+  version = "0.1.8";
 
   src = fetchFromGitHub {
     owner = "gabehf";
     repo = "Koito";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-CIzeKyaujRmjjXvyiJ9gdJy9T3emowO8PeY3VY0p9Ho=";
+    hash = "sha256-aWGR3cESMIFuJ9MXjlcLrMCghtmdlRnvWOJ7MBqPsmc=";
   };
 
-  vendorHash = "sha256-e/gU29rPQUY+eugQxnjbb8UCJ3K4KCtRqJzBl5eFNxg=";
+  vendorHash = "sha256-KuGNUqKWYyLykfsRdwao6jI5nvD+u95XFxo2EfOJeJg=";
 
   passthru.ui = callPackage ./ui.nix {koito = finalAttrs.finalPackage;};
 
