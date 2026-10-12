@@ -61,8 +61,8 @@ in {
       environment = {
         KOITO_DATABASE_URL = "postgresql://koito?host=/run/postgresql";
         KOITO_ALLOWED_HOSTS = lib.concatStringsSep "," cfg.allowedHosts;
-        KOITO_BIND_ADDRESS = cfg.bindAddress;
-        KOITO_PORT = toString cfg.port;
+        KOITO_BIND_ADDR = cfg.bindAddress;
+        KOITO_LISTEN_PORT = toString cfg.port;
         KOITO_CONFIG_DIR = "/var/lib/koito";
       };
       serviceConfig = {
