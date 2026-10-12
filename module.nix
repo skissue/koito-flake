@@ -56,7 +56,8 @@ in {
 
     systemd.services.koito = {
       description = "Koito server";
-      after = ["network.target"];
+      after = ["network.target" "postgresql.service"];
+      requires = ["postgresql.service"];
       wantedBy = ["multi-user.target"];
       environment = {
         KOITO_DATABASE_URL = "postgresql://koito?host=/run/postgresql";
